@@ -115,6 +115,9 @@ public abstract class Post extends Pages {
 	// ////////////////////////////////////////////////////SHOW POST METHODU
 	public static void showVideoPost() {
 		System.out.println("=====Showing VideoPost======");
+		if(PageHelper.getTextPostList().size() == 0){
+			System.out.println("No such file");
+		}
 		int index = 0;
 		for (Post post : PageHelper.getVideoPostList()) {
 			System.out.println(index + 1 + "-) Title: " + post.getTitle());
@@ -124,6 +127,9 @@ public abstract class Post extends Pages {
 
 	public static void showTextPost() {
 		System.out.println("=====Showing TextPost======");
+		if(PageHelper.getTextPostList().size() == 0){
+			System.out.println("No such file");
+		}
 		int index = 1;
 		for (Post post : PageHelper.getTextPostList()) {
 			System.out.println(index + "-) Title: " + post.getTitle());
